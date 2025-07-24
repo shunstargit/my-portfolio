@@ -1,0 +1,12 @@
+{
+  "build": {
+    "src": "src/app/page.js",
+    "use": "@vercel/next"
+  },
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/"
+    }
+  ]
+}
