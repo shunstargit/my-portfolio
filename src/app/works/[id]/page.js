@@ -42,7 +42,12 @@ export default function WorkDetail({ params }) {
       </div>
 
       <div style={{ marginTop: "2rem" }}>
-        <a href="/">← 一覧に戻る</a>
+        import Link from 'next/link';
+
+<Link href="/">
+  トップに戻る
+</Link>
+
       </div>
     </main>
   );
