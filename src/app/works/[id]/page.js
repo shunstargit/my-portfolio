@@ -1,3 +1,4 @@
+import Link from 'next/link'; // ✅ 正しく冒頭に import
 import works from '../../../data/works.json';
 
 export default function WorkDetail({ params }) {
@@ -31,23 +32,21 @@ export default function WorkDetail({ params }) {
       <div style={{ marginTop: "1rem" }}>
         <h3>外部リンク</h3>
         {work.links?.YouTube && (
-          <div><a href={work.links.YouTube} target="_blank">▶ YouTube</a></div>
+          <div><a href={work.links.YouTube} target="_blank" rel="noopener noreferrer">▶ YouTube</a></div>
         )}
         {work.links?.Spotify && (
-          <div><a href={work.links.Spotify} target="_blank">🎵 Spotify</a></div>
+          <div><a href={work.links.Spotify} target="_blank" rel="noopener noreferrer">🎵 Spotify</a></div>
         )}
         {work.links?.GitHub && (
-          <div><a href={work.links.GitHub} target="_blank">💻 GitHub</a></div>
+          <div><a href={work.links.GitHub} target="_blank" rel="noopener noreferrer">💻 GitHub</a></div>
         )}
       </div>
 
+      {/* ✅ 修正済みの戻るリンク */}
       <div style={{ marginTop: "2rem" }}>
-        import Link from 'next/link';
-
-<Link href="/">
-  トップに戻る
-</Link>
-
+        <Link href="/" style={{ color: "blue", textDecoration: "underline" }}>
+          トップに戻る
+        </Link>
       </div>
     </main>
   );
