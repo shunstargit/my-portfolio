@@ -8,14 +8,14 @@ export default function Home() {
       <p style={{ marginTop: "1rem" }}>AIと音楽で遊ぶクリエイター</p>
       <p>作品を紹介するポートフォリオサイトです。</p>
 
-      {/* SNSリンク（外部リンクは <a> でOK） */}
+      {/* SNSリンク（外部リンク） */}
       <div style={{ marginTop: "1rem" }}>
         <a href="https://x.com/yourname" target="_blank" rel="noopener noreferrer">X（旧Twitter）</a><br />
         <a href="https://github.com/yourname" target="_blank" rel="noopener noreferrer">GitHub</a><br />
         <a href="https://youtube.com/@yourchannel" target="_blank" rel="noopener noreferrer">YouTube</a>
       </div>
 
-      {/* 作品一覧表示（カード型・正方形画像・内部リンクにLink使用） */}
+      {/* 作品一覧表示 */}
       <h2 style={{ marginTop: "2rem", fontSize: "1.5rem" }}>作品一覧</h2>
       <ul style={{
         display: "grid",
@@ -26,7 +26,7 @@ export default function Home() {
       }}>
         {works.map((work) => (
           <li key={work.id}>
-            <Link href={`/works/${work.id}`} legacyBehavior>
+            <Link href={`/works/${work.id}`}>
               <a style={{ textDecoration: "none", color: "inherit" }}>
                 <div style={{
                   border: "1px solid #ccc",
