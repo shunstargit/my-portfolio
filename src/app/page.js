@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import works from '../data/works.json';
 
 export default function Home() {
@@ -9,9 +10,9 @@ export default function Home() {
 
       {/* SNSリンク */}
       <div style={{ marginTop: "1rem" }}>
-        <a href="https://x.com/yourname" target="_blank">X（旧Twitter）</a><br />
-        <a href="https://github.com/yourname" target="_blank">GitHub</a><br />
-        <a href="https://youtube.com/@yourchannel" target="_blank">YouTube</a>
+        <a href="https://x.com/yourname" target="_blank" rel="noopener noreferrer">X（旧Twitter）</a><br />
+        <a href="https://github.com/yourname" target="_blank" rel="noopener noreferrer">GitHub</a><br />
+        <a href="https://youtube.com/@yourchannel" target="_blank" rel="noopener noreferrer">YouTube</a>
       </div>
 
       {/* 作品一覧表示（カード型・正方形画像・リンク付き） */}
@@ -24,62 +25,63 @@ export default function Home() {
         padding: 0
       }}>
         {works.map((work) => (
-          <a
-            key={work.id}
-            href={`/works/${work.id}`}
-            style={{
-              textDecoration: "none",
-              color: "inherit"
-            }}
-          >
-            <li style={{
-              border: "1px solid #ccc",
-              borderRadius: "12px",
-              overflow: "hidden",
-              background: "#fff",
-              boxShadow: "0 4px 8px rgba(0,0,0,0.05)",
-              transition: "transform 0.2s",
-              cursor: "pointer"
-            }}>
+          <li key={work.id}>
+            <Link
+              href={`/works/${work.id}`}
+              style={{
+                textDecoration: "none",
+                color: "inherit"
+              }}
+            >
               <div style={{
-                width: "100%",
-                aspectRatio: "1 / 1",
-                backgroundColor: "#f0f0f0",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                overflow: "hidden"
+                border: "1px solid #ccc",
+                borderRadius: "12px",
+                overflow: "hidden",
+                background: "#fff",
+                boxShadow: "0 4px 8px rgba(0,0,0,0.05)",
+                transition: "transform 0.2s",
+                cursor: "pointer"
               }}>
-                <img
-                  src={work.thumbnail}
-                  alt={work.title}
-                  style={{
-                    maxWidth: "100%",
-                    maxHeight: "100%",
-                    objectFit: "contain"
-                  }}
-                />
-              </div>
-              <div style={{ padding: "1rem" }}>
-                <h3 style={{ marginBottom: "0.5rem" }}>{work.title}</h3>
-                <p style={{ margin: 0, fontSize: "0.9rem", color: "#666" }}>
-                  {work.category}｜{work.date}
-                </p>
-                <p style={{ margin: "0.5rem 0" }}>{work.description}</p>
-                <div>
-                  {work.links?.YouTube && (
-                    <span>▶ YouTube</span>
-                  )}
-                  {work.links?.Spotify && (
-                    <><br /><span>🎵 Spotify</span></>
-                  )}
-                  {work.links?.GitHub && (
-                    <><br /><span>💻 GitHub</span></>
-                  )}
+                <div style={{
+                  width: "100%",
+                  aspectRatio: "1 / 1",
+                  backgroundColor: "#f0f0f0",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  overflow: "hidden"
+                }}>
+                  <img
+                    src={work.thumbnail}
+                    alt={work.title}
+                    style={{
+                      maxWidth: "100%",
+                      maxHeight: "100%",
+                      objectFit: "contain"
+                    }}
+                  />
+                </div>
+                <div style={{ padding: "1rem" }}>
+                  <h3 style={{ marginBottom: "0.5rem" }}>{work.title}</h3>
+                  <p style={{ margin: 0, fontSize: "0.9rem", color: "#666" }}>
+                    {work.category}｜{work.date}
+                  </p>
+                  <p style={{ margin: "0.5rem 0" }}>{work.description}</p>
+                  <div>
+                    {work.links?.YouTube && (
+                      <span>▶ YouTube</span>
+                    )}
+                    {work.links?.Spotify && (
+                      <><br /><span>🎵 Spotify</span></>
+                    )}
+                    {work.links?.GitHub && (
+                      <><br /><span>💻 GitHub</span></>
+                    )}
+                  </div>
                 </div>
               </div>
-            </li>
-          </a>
+            </Link>
+          </li>
         ))}
       </ul>
     </main>
