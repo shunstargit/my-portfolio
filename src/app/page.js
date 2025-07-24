@@ -26,13 +26,7 @@ export default function Home() {
       }}>
         {works.map((work) => (
           <li key={work.id}>
-            <Link
-              href={`/works/${work.id}`}
-              style={{
-                textDecoration: "none",
-                color: "inherit"
-              }}
-            >
+            <Link href={`/works/${work.id}`} style={{ textDecoration: "none", color: "inherit" }}>
               <div style={{
                 border: "1px solid #ccc",
                 borderRadius: "12px",
@@ -68,15 +62,9 @@ export default function Home() {
                   </p>
                   <p style={{ margin: "0.5rem 0" }}>{work.description}</p>
                   <div>
-                    {work.links?.YouTube && (
-                      <span>▶ YouTube</span>
-                    )}
-                    {work.links?.Spotify && (
-                      <><br /><span>🎵 Spotify</span></>
-                    )}
-                    {work.links?.GitHub && (
-                      <><br /><span>💻 GitHub</span></>
-                    )}
+                    {work.links?.YouTube && <span>▶ YouTube</span>}
+                    {work.links?.Spotify && <><br /><span>🎵 Spotify</span></>}
+                    {work.links?.GitHub && <><br /><span>💻 GitHub</span></>}
                   </div>
                 </div>
               </div>
