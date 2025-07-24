@@ -1,0 +1,39 @@
+[
+  {
+    "id": "music_01",
+    "title": "星空ノスタルジア",
+    "category": "音楽",
+    "date": "2025-06-10",
+    "description": "Sunoで作曲した幻想的なピアノ曲",
+    "thumbnail": "/images/music1.png",
+    "links": {
+      "YouTube": "https://youtube.com/watch?v=your_music_video_link",
+      "Spotify": "https://open.spotify.com/your_music_link"
+    },
+    "tags": ["Suno", "AI作曲"]
+  },
+  {
+    "id": "mv_01",
+    "title": "夢電車",
+    "category": "MV",
+    "date": "2025-06-15",
+    "description": "Runwayで生成した映像作品",
+    "thumbnail": "/images/mv1.jpg",
+    "links": {
+      "YouTube": "https://youtube.com/watch?v=your_mv_link"
+    },
+    "tags": ["Runway", "映像"]
+  },
+  {
+    "id": "app_01",
+    "title": "AIアイデアノート",
+    "category": "アプリ",
+    "date": "2025-07-01",
+    "description": "ChatGPTでアイデアを整理するアプリ",
+    "thumbnail": "/images/app1.jpg",
+    "links": {
+      "GitHub": "https://github.com/yourusername/ai-idea-note"
+    },
+    "tags": ["ChatGPT", "React"]
+  }
+]
