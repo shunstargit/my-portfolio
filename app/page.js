@@ -5,15 +5,15 @@ import works from '../data/works.json';
 export default function Home() {
   return (
     <main style={{ padding: "2rem", fontFamily: "sans-serif" }}>
-      <h1 style={{ fontSize: "2rem", fontWeight: "bold" }}>あなたの名前</h1>
-      <p style={{ marginTop: "1rem" }}>AIと音楽で遊ぶクリエイター</p>
+      <h1 style={{ fontSize: "2rem", fontWeight: "bold" }}>shunstar</h1>
+      <p style={{ marginTop: "1rem" }}>AIで遊ぶクリエイター</p>
       <p>作品を紹介するポートフォリオサイトです。</p>
 
       {/* SNSリンク */}
       <div style={{ marginTop: "1rem" }}>
-        <a href="https://x.com/yourname" target="_blank" rel="noopener noreferrer">X（旧Twitter）</a><br />
-        <a href="https://github.com/yourname" target="_blank" rel="noopener noreferrer">GitHub</a><br />
-        <a href="https://youtube.com/@yourchannel" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://x.com/shunstar11" target="_blank" rel="noopener noreferrer">X（旧Twitter）</a><br />
+        <a href="https://github.com/shunstargit/my-portfolio.git" target="_blank" rel="noopener noreferrer">GitHub</a><br />
+        <a href="https://www.youtube.com/@shunstar" target="_blank" rel="noopener noreferrer">YouTube</a>
       </div>
 
       {/* 作品一覧表示（カード型・正方形画像・リンク付き） */}

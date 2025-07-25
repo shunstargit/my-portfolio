@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link"; // ← 追加
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,10 +20,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {/* ▼ ナビゲーションメニュー */}
+        <header className="bg-white shadow-md px-6 py-4 flex justify-between items-center">
+          <h1 className="text-xl font-bold">shun1</h1>
+          <nav className="space-x-6 text-sm">
+            <Link href="/">ホーム</Link>
+            <Link href="/about">プロフィール</Link>
+            <Link href="/contact">お問い合わせ</Link>
+          </nav>
+        </header>
+
+        {/* ▼ 各ページの内容 */}
+        <main className="px-6 py-4">{children}</main>
       </body>
     </html>
   );
